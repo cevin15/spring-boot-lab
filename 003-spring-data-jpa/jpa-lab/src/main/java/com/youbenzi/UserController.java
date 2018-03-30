@@ -1,5 +1,7 @@
 package com.youbenzi;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,17 @@ public class UserController {
 	@GetMapping(path = "/all")
 	public Iterable<User> getAllUsers() {
 		return userRepository.findAll();
+	}
+	
+	@GetMapping(path = "/find")
+	public List<User> findByName(@RequestParam int age) {
+		return userRepository.findByAgeLessThan(age);
+	}
+	
+	@GetMapping(path = "/update")
+	public String update(@RequestParam int age, @RequestParam long id) {
+		userRepository.updateAge(age, id);
+		return "Updated";
 	}
 	
 }
