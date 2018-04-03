@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
 	@Cacheable(value="user", key="#name")
+//	@Cacheable(value="user", key="#name", condition="#name == 'Jack'")
 //	@Cacheable(value="user", keyGenerator="ConstantKeyGenerator")
 	public String findUser(String name) {
 		try {
@@ -18,7 +19,8 @@ public class UserService {
 		return "[User] " + name;
 	}
 	
-	@CacheEvict(value="user", key="#name", beforeInvocation=true)
+	@CacheEvict(value="user", key="#name")
+//	@CacheEvict(value="user", key="#name", beforeInvocation=true)
 //	@Caching(evict = {@CacheEvict(value="user1", key="#name"), @CacheEvict(value="user2", key="#name")})
 //	@CacheEvict(value="user", keyGenerator="ConstantKeyGenerator")
 	public void evictUserCache(String name) {

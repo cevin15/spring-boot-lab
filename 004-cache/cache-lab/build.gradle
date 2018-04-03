@@ -30,5 +30,5 @@ repositories {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.springframework.boot:spring-boot-starter-cache")
-	//compile("org.springframework.boot:spring-boot-starter-data-redis")
+	compile("org.springframework.boot:spring-boot-starter-data-redis")
 }
