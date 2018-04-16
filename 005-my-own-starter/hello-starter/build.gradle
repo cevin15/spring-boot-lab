@@ -3,7 +3,7 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 
 jar {
-    baseName = 'hello-starter'
+    baseName = 'hello-spring-boot-starter'
     version =  '0.1.0'
 }
 

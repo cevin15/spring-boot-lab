@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableConfigurationProperties(HelloProperties.class)
+@EnableConfigurationProperties(value = {HelloProperties.class})
 @ConditionalOnProperty(prefix = "youbenzi", name = "enable", matchIfMissing = true)
 public class HelloAutoConfiguration {
 
