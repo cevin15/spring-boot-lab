@@ -11,6 +11,6 @@ public class HelloController {
 	
 	@RequestMapping(path = "/hello")
 	public String hello() {
-		return "Hello, " + userservice.name(userservice);
+		return "Hello, " + userservice.name();
 	}
 }

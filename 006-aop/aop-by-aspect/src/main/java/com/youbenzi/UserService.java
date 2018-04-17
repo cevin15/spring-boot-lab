@@ -4,15 +4,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
-
-	private int num = 100;
-	
-	public int getNum() {
-		return num;
-	}
 	
 	@ExecutionTime
-	public String name(UserService userService) {
+	public String name() {
 		try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
@@ -20,5 +14,9 @@ public class UserService {
 		}
 		
 		return "World";
+	}
+	
+	public int num(int i) {
+		return i;
 	}
 }
